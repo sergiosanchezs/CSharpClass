@@ -39,6 +39,15 @@ namespace Assignment1
          operator2 += 1;
          result = OPERATOR1 * operator2;
          Console.WriteLine("{0} * {1} = {2}", OPERATOR1, operator2, result);
+         Console.WriteLine("---------------------------------------------------");
+
+         // Optimized version of this is using a for loop
+
+         for (int numberTimes = 1; numberTimes <= 10; numberTimes++)
+         {
+            result = OPERATOR1 * numberTimes;
+            Console.WriteLine("{0} * {1} = {2}", OPERATOR1, numberTimes, result);
+         }
       }
    }
 }
