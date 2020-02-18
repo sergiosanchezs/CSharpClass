@@ -25,7 +25,7 @@ namespace Week5
             Console.WriteLine($"{i} yes");
          }
 
-
+         Console.WriteLine("\n---------------------------------------------");
          int num, ctr;
          int startNumber, endNumber;
          // Prime numbers
@@ -53,7 +53,25 @@ namespace Week5
                Console.Write($"{num} ");
          }
          Console.WriteLine();
+         int counterX;
+         int counterY;
+         int sizeMatrix = 5;
+         Console.WriteLine("\n---------------------------------------------");
+         Console.WriteLine("Please enter the size of the matrix of X that you want:");
+         sizeMatrix = Convert.ToInt32(Console.ReadLine());
 
+         counterY = 0;
+         do
+         {
+            counterX = 0;
+            do
+            {
+               Console.Write("X ");
+               counterX++;
+            } while (counterX < sizeMatrix);
+            Console.WriteLine();
+            counterY++;
+         } while (counterY < sizeMatrix);
 
       }
    }
