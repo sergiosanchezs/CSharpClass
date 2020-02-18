@@ -73,6 +73,22 @@ namespace Week5
             counterY++;
          } while (counterY < sizeMatrix);
 
+         Console.WriteLine("\n---------------------------------------------");
+         Console.WriteLine("This program calculate a number powers to a number");
+         int nBase, exp, result;
+         Console.WriteLine("Please enter the base:");
+         nBase = Convert.ToInt32(Console.ReadLine());
+         Console.WriteLine("Please enter the Exponent:");
+         exp = Convert.ToInt32(Console.ReadLine());
+
+         result = 1;
+         for (i = 0; i < exp; i++)
+         {
+            result *= nBase;
+         }
+
+         Console.WriteLine($" Base: {nBase} to Exponent: {exp} = {result}");
+
       }
    }
 }
