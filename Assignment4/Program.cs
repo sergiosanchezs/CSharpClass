@@ -4,42 +4,42 @@ namespace Assignment4
 {
    class Program
    {
-      static void Main(string[] args)
+      void Main(string[] args)
       {
          /* Assignment 3 */
          int optionSelected;
          bool isEndSelected = false;
-
+         Operations o = new Operations();
          do
          {
             do
             {
-               printMainMenu();
-               optionSelected = userInputInteger();
+               o.printMainMenu();
+               optionSelected = o.userInputInteger();
 
-               if (isValidOption(optionSelected) && optionSelected >= 0)
+               if (o.isValidOption(optionSelected) && optionSelected >= 0)
                {
-                  printErrorMessage("Please enter a valid option");
+                  o.printErrorMessage("Please enter a valid option");
                }
 
-            } while (isValidOption(optionSelected));
+            } while (o.isValidOption(optionSelected));
 
             switch (optionSelected)
             {
                case 1:
-                  printFibonacciSeries();
+                  o.printFibonacciSeries();
                   break;
                case 2:
-                  printAlphabetUppercase();
+                  o.printAlphabetUppercase();
                   break;
                case 3:
-                  printAlphabetLowercase();
+                  o.printAlphabetLowercase();
                   break;
                case 4:
-                  printPatternStarsIncrementing();
+                  o.printPatternStarsIncrementing();
                   break;
                case 5:
-                  printPatternStarsDecrementing();
+                  o.printPatternStarsDecrementing();
                   break;
                case 6:
                   isEndSelected = true;
@@ -51,13 +51,15 @@ namespace Assignment4
          Console.WriteLine("\nThanks for using my program!");
 
       }
+   }
 
-      private static bool isValidOption(int option)
+   class Operations
+   {
+      public bool isValidOption(int option)
       {
          return (option >= 1 && option <= 6) ? false : true;
       }
-
-      private static void printErrorMessage(String dataToPrint)
+      public void printErrorMessage(String dataToPrint)
       {
          Console.ForegroundColor = ConsoleColor.Yellow;
          Console.BackgroundColor = ConsoleColor.Red;
@@ -66,7 +68,7 @@ namespace Assignment4
          Console.BackgroundColor = ConsoleColor.Black;
       }
 
-      private static void printMainMenu()
+      public void printMainMenu()
       {
          Console.ForegroundColor = ConsoleColor.Cyan;
          Console.WriteLine("\n------------ Menu -----------");
@@ -80,7 +82,7 @@ namespace Assignment4
          Console.ForegroundColor = ConsoleColor.White;
       }
 
-      private static int userInputInteger()
+      public int userInputInteger()
       {
          int input = 0;
          try
@@ -95,12 +97,12 @@ namespace Assignment4
          return input;
       }
 
-      private static void printSeparator()
+      public void printSeparator()
       {
          Console.WriteLine("\n--------------------------------------------------");
       }
 
-      private static void printFibonacciSeries()
+      public void printFibonacciSeries()
       {
          /* 1.	Write a C# program to display Fibonacci series on screen 
              * The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
@@ -139,7 +141,7 @@ namespace Assignment4
          Console.WriteLine();
       }
 
-      private static void printAlphabetLowercase()
+      public void printAlphabetLowercase()
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
@@ -156,7 +158,7 @@ namespace Assignment4
 
       }
 
-      private static void printAlphabetUppercase()
+      public void printAlphabetUppercase()
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
@@ -174,7 +176,7 @@ namespace Assignment4
       }
 
 
-      private static void printPatternStarsIncrementing()
+      public void printPatternStarsIncrementing()
       {
          /* 3.	Write a program to display following pattern in screen 
              * a.	*                                                   
@@ -208,7 +210,7 @@ namespace Assignment4
          }
       }
 
-      private static void printPatternStarsDecrementing()
+      public void printPatternStarsDecrementing()
       {
          /* 4.	Write a program to display following pattern in screen 
           * b.	*****                                                   
@@ -244,4 +246,7 @@ namespace Assignment4
       }
 
    }
+
+
+
 }
