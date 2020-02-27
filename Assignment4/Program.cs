@@ -15,17 +15,11 @@ namespace Assignment4
             do
             {
                printMainMenu();
-               optionSelected = 0;
-               try
+               optionSelected = userInputInteger();
+
+               if (isValidOption(optionSelected) && optionSelected >= 0)
                {
-                  optionSelected = Convert.ToInt32(Console.ReadLine());
-               }
-               catch (Exception ex)
-               {
-                  Console.ForegroundColor = ConsoleColor.Yellow;
-                  Console.BackgroundColor = ConsoleColor.Red;
-                  Console.WriteLine("\nError: Please enter a number.");
-                  Console.ResetColor();
+                  printErrorMessage("Please enter a valid option");
                }
 
             } while (isValidOption(optionSelected));
@@ -63,6 +57,15 @@ namespace Assignment4
          return (option >= 1 && option <= 6) ? false : true;
       }
 
+      private static void printErrorMessage(String dataToPrint)
+      {
+         Console.ForegroundColor = ConsoleColor.Yellow;
+         Console.BackgroundColor = ConsoleColor.Red;
+         Console.WriteLine("\n" + dataToPrint);
+         Console.ForegroundColor = ConsoleColor.White;
+         Console.BackgroundColor = ConsoleColor.Black;
+      }
+
       private static void printMainMenu()
       {
          Console.ForegroundColor = ConsoleColor.Cyan;
@@ -77,6 +80,26 @@ namespace Assignment4
          Console.ForegroundColor = ConsoleColor.White;
       }
 
+      private static int userInputInteger()
+      {
+         int input = 0;
+         try
+         {
+            input = Convert.ToInt32(Console.ReadLine());
+         }
+         catch (Exception ex)
+         {
+            printErrorMessage("Error: Please enter a number.");
+            input = -1;
+         }
+         return input;
+      }
+
+      private static void printSeparator()
+      {
+         Console.WriteLine("\n--------------------------------------------------");
+      }
+
       private static void printFibonacciSeries()
       {
          /* 1.	Write a C# program to display Fibonacci series on screen 
@@ -87,9 +110,9 @@ namespace Assignment4
 
          int i, number, term1 = 0, term2 = 1, nextTerm;
 
-         Console.WriteLine("\n--------------------------------------------------");
+         printSeparator();
          Console.WriteLine("Enter the number of terms: ");
-         number = Convert.ToInt32(Console.ReadLine());
+         number = userInputInteger();
 
          Console.WriteLine("Fibonacci Series: ");
          for (i = 1; i <= number; ++i)
@@ -110,9 +133,9 @@ namespace Assignment4
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
-         Console.WriteLine("\n--------------------------------------------------");
+         printSeparator();
          Console.WriteLine("Alphabet Lowercase:");
-         char initialAlphabetLetter = (char)97;    // a
+         char initialAlphabetLetter = (char)97;    // a as default
          char finalAlphabetLetter = (char)122;     // z
 
          for (char letter = initialAlphabetLetter; letter <= finalAlphabetLetter; letter++)
@@ -127,7 +150,7 @@ namespace Assignment4
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
-         Console.WriteLine("\n--------------------------------------------------");
+         printSeparator();
          Console.WriteLine("Alphabet Uppercase:");
          char initialAlphabetLetter = (char)65;    // a
          char finalAlphabetLetter = (char)90;     // z
@@ -150,10 +173,10 @@ namespace Assignment4
                   ****
                   *****       */
          int linesUp;
-         Console.WriteLine("\n--------------------------------------------------");
+         printSeparator();
          Console.WriteLine("Pattern increasing in number of stars as it going through.");
          Console.WriteLine("Please enter how many lines you want to print on the screen: ");
-         linesUp = Convert.ToInt32(Console.ReadLine());
+         linesUp = userInputInteger();
 
          for (int k = 1; k <= linesUp; k++)
          {
@@ -174,10 +197,10 @@ namespace Assignment4
                **
                *       */
          int linesDown;
-         Console.WriteLine("\n--------------------------------------------------");
+         printSeparator();
          Console.WriteLine("Pattern decreasing in number of stars as it going through.");
          Console.WriteLine("Please enter how many lines you want to print on the screen: ");
-         linesDown = Convert.ToInt32(Console.ReadLine());
+         linesDown = userInputInteger();
 
          for (int k = linesDown; k >= 1; k--)
          {
