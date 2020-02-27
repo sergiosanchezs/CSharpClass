@@ -110,9 +110,19 @@ namespace Assignment4
 
          int i, number, term1 = 0, term2 = 1, nextTerm;
 
-         printSeparator();
-         Console.WriteLine("Enter the number of terms: ");
-         number = userInputInteger();
+         do
+         {
+            printSeparator();
+            Console.WriteLine("Enter the number of terms: ");
+            number = userInputInteger();
+
+            if (number < 3)
+            {
+               printErrorMessage("Please enter a valid option. Must be 3 or more terms.");
+            }
+
+         } while (number < 3);
+
 
          Console.WriteLine("Fibonacci Series: ");
          for (i = 1; i <= number; ++i)
@@ -173,10 +183,20 @@ namespace Assignment4
                   ****
                   *****       */
          int linesUp;
-         printSeparator();
-         Console.WriteLine("Pattern increasing in number of stars as it going through.");
-         Console.WriteLine("Please enter how many lines you want to print on the screen: ");
-         linesUp = userInputInteger();
+
+         do
+         {
+            printSeparator();
+            Console.WriteLine("Pattern increasing in number of stars as it going through.");
+            Console.WriteLine("Please enter how many lines you want to print on the screen: ");
+            linesUp = userInputInteger();
+
+            if (linesUp < 5)
+            {
+               printErrorMessage("Please enter a valid option. Must be 5 or more terms.");
+            }
+
+         } while (linesUp < 5);
 
          for (int k = 1; k <= linesUp; k++)
          {
@@ -197,10 +217,21 @@ namespace Assignment4
                **
                *       */
          int linesDown;
-         printSeparator();
-         Console.WriteLine("Pattern decreasing in number of stars as it going through.");
-         Console.WriteLine("Please enter how many lines you want to print on the screen: ");
-         linesDown = userInputInteger();
+
+         do
+         {
+            printSeparator();
+            Console.WriteLine("Pattern decreasing in number of stars as it going through.");
+            Console.WriteLine("Please enter how many lines you want to print on the screen: ");
+            linesDown = userInputInteger();
+
+            if (linesDown < 5)
+            {
+               printErrorMessage("Please enter a valid option. Must be 5 or more terms.");
+            }
+
+         } while (linesDown < 5);
+         
 
          for (int k = linesDown; k >= 1; k--)
          {
