@@ -244,9 +244,5 @@ namespace Assignment4
             Console.WriteLine();
          }
       }
-
    }
-
-
-
 }
