@@ -4,42 +4,42 @@ namespace Assignment4
 {
    class Program
    {
-      void Main(string[] args)
+      static void Main(string[] args)
       {
          /* Assignment 3 */
          int optionSelected;
          bool isEndSelected = false;
-         Operations o = new Operations();
+         Operations oper = new Operations();
          do
          {
             do
             {
-               o.printMainMenu();
-               optionSelected = o.userInputInteger();
+               oper.printMainMenu();
+               optionSelected = oper.userInputInteger();
 
-               if (o.isValidOption(optionSelected) && optionSelected >= 0)
+               if (oper.isValidOption(optionSelected) && optionSelected >= 0)
                {
-                  o.printErrorMessage("Please enter a valid option");
+                  oper.printErrorMessage("Please enter a valid option");
                }
 
-            } while (o.isValidOption(optionSelected));
+            } while (oper.isValidOption(optionSelected));
 
             switch (optionSelected)
             {
                case 1:
-                  o.printFibonacciSeries();
+                  oper.printFibonacciSeries();
                   break;
                case 2:
-                  o.printAlphabetUppercase();
+                  oper.printAlphabetUppercase();
                   break;
                case 3:
-                  o.printAlphabetLowercase();
+                  oper.printAlphabetLowercase();
                   break;
                case 4:
-                  o.printPatternStarsIncrementing();
+                  oper.printPatternStarsIncrementing();
                   break;
                case 5:
-                  o.printPatternStarsDecrementing();
+                  oper.printPatternStarsDecrementing();
                   break;
                case 6:
                   isEndSelected = true;
@@ -61,11 +61,11 @@ namespace Assignment4
       }
       public void printErrorMessage(String dataToPrint)
       {
-         Console.ForegroundColor = ConsoleColor.Yellow;
-         Console.BackgroundColor = ConsoleColor.Red;
+         //Console.ForegroundColor = ConsoleColor.Yellow;
+         Console.ForegroundColor = ConsoleColor.Red;
          Console.WriteLine("\n" + dataToPrint);
          Console.ForegroundColor = ConsoleColor.White;
-         Console.BackgroundColor = ConsoleColor.Black;
+         //Console.BackgroundColor = ConsoleColor.Black;
       }
 
       public void printMainMenu()
