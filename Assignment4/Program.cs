@@ -22,7 +22,10 @@ namespace Assignment4
                }
                catch (Exception ex)
                {
-                  Console.WriteLine("Please enter a number.");
+                  Console.ForegroundColor = ConsoleColor.Yellow;
+                  Console.BackgroundColor = ConsoleColor.Red;
+                  Console.WriteLine("\nError: Please enter a number.");
+                  Console.ResetColor();
                }
 
             } while (isValidOption(optionSelected));
@@ -51,7 +54,7 @@ namespace Assignment4
 
          } while (!isEndSelected);
 
-         Console.WriteLine("Thanks for using my program!");
+         Console.WriteLine("\nThanks for using my program!");
 
       }
 
@@ -62,6 +65,7 @@ namespace Assignment4
 
       private static void printMainMenu()
       {
+         Console.ForegroundColor = ConsoleColor.Cyan;
          Console.WriteLine("\n------------ Menu -----------");
          Console.WriteLine("1. Print Fibonnacci Series.");
          Console.WriteLine("2. Print the Alphabet in Uppercase.");
@@ -70,6 +74,7 @@ namespace Assignment4
          Console.WriteLine("5. Print the Star Pattern Decrementing.");
          Console.WriteLine("6. Exit the program.");
          Console.Write("\nYour Option: ");
+         Console.ForegroundColor = ConsoleColor.White;
       }
 
       private static void printFibonacciSeries()
