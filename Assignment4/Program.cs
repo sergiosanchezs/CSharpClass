@@ -9,37 +9,37 @@ namespace Assignment4
          /* Assignment 3 */
          int optionSelected;
          bool isEndSelected = false;
-
+         Operations oper = new Operations();
          do
          {
             do
             {
-               printMainMenu();
-               optionSelected = userInputInteger();
+               oper.printMainMenu();
+               optionSelected = oper.userInputInteger();
 
-               if (isValidOption(optionSelected) && optionSelected >= 0)
+               if (oper.isValidOption(optionSelected) && optionSelected >= 0)
                {
-                  printErrorMessage("Please enter a valid option");
+                  oper.printErrorMessage("Please enter a valid option");
                }
 
-            } while (isValidOption(optionSelected));
+            } while (oper.isValidOption(optionSelected));
 
             switch (optionSelected)
             {
                case 1:
-                  printFibonacciSeries();
+                  oper.printFibonacciSeries();
                   break;
                case 2:
-                  printAlphabetUppercase();
+                  oper.printAlphabetUppercase();
                   break;
                case 3:
-                  printAlphabetLowercase();
+                  oper.printAlphabetLowercase();
                   break;
                case 4:
-                  printPatternStarsIncrementing();
+                  oper.printPatternStarsIncrementing();
                   break;
                case 5:
-                  printPatternStarsDecrementing();
+                  oper.printPatternStarsDecrementing();
                   break;
                case 6:
                   isEndSelected = true;
@@ -51,22 +51,24 @@ namespace Assignment4
          Console.WriteLine("\nThanks for using my program!");
 
       }
+   }
 
-      private static bool isValidOption(int option)
+   class Operations
+   {
+      public bool isValidOption(int option)
       {
          return (option >= 1 && option <= 6) ? false : true;
       }
-
-      private static void printErrorMessage(String dataToPrint)
+      public void printErrorMessage(String dataToPrint)
       {
-         Console.ForegroundColor = ConsoleColor.Yellow;
-         Console.BackgroundColor = ConsoleColor.Red;
+         //Console.ForegroundColor = ConsoleColor.Yellow;
+         Console.ForegroundColor = ConsoleColor.Red;
          Console.WriteLine("\n" + dataToPrint);
          Console.ForegroundColor = ConsoleColor.White;
-         Console.BackgroundColor = ConsoleColor.Black;
+         //Console.BackgroundColor = ConsoleColor.Black;
       }
 
-      private static void printMainMenu()
+      public void printMainMenu()
       {
          Console.ForegroundColor = ConsoleColor.Cyan;
          Console.WriteLine("\n------------ Menu -----------");
@@ -80,7 +82,7 @@ namespace Assignment4
          Console.ForegroundColor = ConsoleColor.White;
       }
 
-      private static int userInputInteger()
+      public int userInputInteger()
       {
          int input = 0;
          try
@@ -95,12 +97,12 @@ namespace Assignment4
          return input;
       }
 
-      private static void printSeparator()
+      public void printSeparator()
       {
          Console.WriteLine("\n--------------------------------------------------");
       }
 
-      private static void printFibonacciSeries()
+      public void printFibonacciSeries()
       {
          /* 1.	Write a C# program to display Fibonacci series on screen 
              * The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
@@ -139,7 +141,7 @@ namespace Assignment4
          Console.WriteLine();
       }
 
-      private static void printAlphabetLowercase()
+      public void printAlphabetLowercase()
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
@@ -156,7 +158,7 @@ namespace Assignment4
 
       }
 
-      private static void printAlphabetUppercase()
+      public void printAlphabetUppercase()
       {
          /* 2.	Write a C# program that will print Alphabets on screen (a-z)
           * Alphabet a in ascii is 97 and the z is 122 */
@@ -174,7 +176,7 @@ namespace Assignment4
       }
 
 
-      private static void printPatternStarsIncrementing()
+      public void printPatternStarsIncrementing()
       {
          /* 3.	Write a program to display following pattern in screen 
              * a.	*                                                   
@@ -208,7 +210,7 @@ namespace Assignment4
          }
       }
 
-      private static void printPatternStarsDecrementing()
+      public void printPatternStarsDecrementing()
       {
          /* 4.	Write a program to display following pattern in screen 
           * b.	*****                                                   
@@ -242,6 +244,5 @@ namespace Assignment4
             Console.WriteLine();
          }
       }
-
    }
 }
