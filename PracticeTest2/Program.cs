@@ -7,7 +7,6 @@ namespace PracticeTest2
       static void Main(string[] args)
       {
          test26();
-
          //int n = 1;
          //Console.WriteLine(+n);
          //Console.WriteLine(n);
