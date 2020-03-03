@@ -7,12 +7,6 @@ namespace PracticeTest2
       static void Main(string[] args)
       {
          diamondV4();
-         //test26();
-         //int n = 1;
-         //Console.WriteLine(+n);
-         //Console.WriteLine(n);
-         //Console.WriteLine(0%3);
-         //Console.WriteLine(Convert.ToBoolean(0.1));
       }
 
       private static void diamondV4()
@@ -266,6 +260,14 @@ namespace PracticeTest2
             Console.WriteLine("hello");
          }
       }
+
+
+      //test26();
+      //int n = 1;
+      //Console.WriteLine(+n);
+      //Console.WriteLine(n);
+      //Console.WriteLine(0%3);
+      //Console.WriteLine(Convert.ToBoolean(0.1));
 
       private static void test14()
       {
