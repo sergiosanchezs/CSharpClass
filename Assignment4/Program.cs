@@ -209,7 +209,7 @@ namespace Assignment4
             Console.WriteLine();
          }
       }
-
+      
       public void printPatternStarsDecrementing()
       {
          /* 4.	Write a program to display following pattern in screen 
