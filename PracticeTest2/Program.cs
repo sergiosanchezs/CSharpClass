@@ -6,7 +6,7 @@ namespace PracticeTest2
    {
       static void Main(string[] args)
       {
-         diamondV3();
+         diamondV4();
          //test26();
          //int n = 1;
          //Console.WriteLine(+n);
@@ -14,19 +14,56 @@ namespace PracticeTest2
          //Console.WriteLine(0%3);
          //Console.WriteLine(Convert.ToBoolean(0.1));
       }
+
+      private static void diamondV4()
+      {
+         int userSize, i, j, k, spaces;
+         bool isIncrementing;
+         String symbol;
+
+         Console.WriteLine("Size of the diamond");
+         userSize = Convert.ToInt32(Console.ReadLine());
+
+         Console.WriteLine("Which symbol do you want to use:");
+         symbol = (char)Console.Read() + " ";
+         //symbol = "* ";
+
+         isIncrementing = true;
+         spaces = userSize - 1;
+
+         for (i = isIncrementing ? 1 : spaces;
+            (isIncrementing && i <= userSize) || (!isIncrementing && i >= 1);
+            i = isIncrementing ? i + 1 : i - 1, spaces = isIncrementing ? spaces - 1 : spaces + 1)
+         {
+            for (j = spaces; j >= 1; j--)
+               Console.Write(" ");
+
+            for (k = isIncrementing ? 1 : i;
+               (isIncrementing && k <= i) || (!isIncrementing && k >= 1);
+               k = isIncrementing ? k + 1 : k - 1)
+               Console.Write(symbol);
+
+            if (i == userSize)
+               isIncrementing = false;
+
+            Console.WriteLine();
+         }
+      }
       private static void diamondV3()
       {
-         int userInput, i, j, k, spaces;
+         int userSize, i, j, k, spaces;
          bool isIncrementing;
 
          Console.WriteLine("Size of the diamond");
-         userInput = Convert.ToInt32(Console.ReadLine());
+         userSize = Convert.ToInt32(Console.ReadLine());
+
+         Console.WriteLine("Which symbol");
 
          isIncrementing = true;
-         spaces = userInput - 1;
+         spaces = userSize - 1;
 
          for (i = isIncrementing ? 1 : spaces;
-            (isIncrementing && i <= userInput) || (!isIncrementing && i >= 1);
+            (isIncrementing && i <= userSize) || (!isIncrementing && i >= 1);
             i = isIncrementing ? i + 1 : i - 1, spaces = isIncrementing ? spaces - 1 : spaces + 1)
          {
             for (j = spaces; j >= 1; j--)
@@ -37,7 +74,7 @@ namespace PracticeTest2
                k = isIncrementing ? k + 1 : k - 1)
                Console.Write("* ");
 
-            if (i == userInput)
+            if (i == userSize)
                isIncrementing = false;
 
             Console.WriteLine();
