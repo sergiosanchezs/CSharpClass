@@ -17,33 +17,29 @@ namespace PracticeTest2
       private static void diamondV3()
       {
          int userInput, i, j, k, spaces;
-         bool isIncrementing = true;
+         bool isIncrementing;
 
          Console.WriteLine("Size of the diamond");
          userInput = Convert.ToInt32(Console.ReadLine());
-         
-         spaces = userInput - 1;
-         i = isIncrementing ? 1 : spaces;
 
-         for (;
+         isIncrementing = true;
+         spaces = userInput - 1;
+
+         for (i = isIncrementing ? 1 : spaces;
             (isIncrementing && i <= userInput) || (!isIncrementing && i >= 1);
             i = isIncrementing ? i + 1 : i - 1, spaces = isIncrementing ? spaces - 1 : spaces + 1)
          {
             for (j = spaces; j >= 1; j--)
-            {
                Console.Write(" ");
-            }
 
             for (k = isIncrementing ? 1 : i;
                (isIncrementing && k <= i) || (!isIncrementing && k >= 1);
                k = isIncrementing ? k + 1 : k - 1)
-            {
                Console.Write("* ");
-            }
+
             if (i == userInput)
-            {
                isIncrementing = false;
-            }
+
             Console.WriteLine();
          }
       }
