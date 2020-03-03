@@ -6,14 +6,23 @@ namespace PracticeTest2
    {
       static void Main(string[] args)
       {
-         test25();
+         test26();
          //int n = 1;
          //Console.WriteLine(+n);
          //Console.WriteLine(n);
          //Console.WriteLine(0%3);
          //Console.WriteLine(Convert.ToBoolean(0.1));
       }
-
+      private static void test26()
+      {
+         long x;
+         x = 1234;
+         do
+         {
+            Console.Write(x % 10);
+         } while ((x = x / 10) != 0);
+         Console.WriteLine();
+      }
       private static void test25()
       {
          int i = 1, j = 5;
