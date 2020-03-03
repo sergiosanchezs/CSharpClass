@@ -6,12 +6,105 @@ namespace PracticeTest2
    {
       static void Main(string[] args)
       {
-         test26();
+         diamondV3();
+         //test26();
          //int n = 1;
          //Console.WriteLine(+n);
          //Console.WriteLine(n);
          //Console.WriteLine(0%3);
          //Console.WriteLine(Convert.ToBoolean(0.1));
+      }
+      private static void diamondV3()
+      {
+         int userInput, i, j, k, spaces;
+         bool isIncrementing = true;
+
+         Console.WriteLine("Size of the diamond");
+         userInput = Convert.ToInt32(Console.ReadLine());
+         
+         spaces = userInput - 1;
+         i = isIncrementing ? 1 : spaces;
+
+         for (;
+            (isIncrementing && i <= userInput) || (!isIncrementing && i >= 1);
+            i = isIncrementing ? i + 1 : i - 1, spaces = isIncrementing ? spaces - 1 : spaces + 1)
+         {
+            for (j = spaces; j >= 1; j--)
+            {
+               Console.Write(" ");
+            }
+
+            for (k = isIncrementing ? 1 : i;
+               (isIncrementing && k <= i) || (!isIncrementing && k >= 1);
+               k = isIncrementing ? k + 1 : k - 1)
+            {
+               Console.Write("* ");
+            }
+            if (i == userInput)
+            {
+               isIncrementing = false;
+            }
+            Console.WriteLine();
+         }
+      }
+      private static void diamondV2()
+      {
+         int i, j, k, spaces = 7;
+         bool isIncrementing = true;
+
+         i = isIncrementing ? 1 : 7;
+         for (; 
+            (isIncrementing && i <= 8) || (!isIncrementing && i >= 1); 
+            i = isIncrementing ? i + 1 : i - 1, spaces = isIncrementing ? spaces - 1 : spaces + 1)
+         {
+            for (j = spaces; j >= 1; j--)
+            {
+               Console.Write(" ");
+            }
+           
+            for (k = isIncrementing ? 1 : i;
+               (isIncrementing && k <= i) || (!isIncrementing && k >= 1); 
+               k = isIncrementing ? k + 1 : k - 1)
+            {
+               Console.Write("* ");
+            }
+            if (i == 8)
+            {
+               isIncrementing = false;
+            }
+            Console.WriteLine();
+         }
+      }
+
+      private static void diamond()
+      {
+         int i, j, k, spaces = 7;
+         for (i = 1; i <= 8; i++, spaces--)
+         {
+            for (j = spaces; j >= 1; j--)
+            {
+               Console.Write(" ");
+            }
+            for (k = 1; k <= i; k++)
+            {
+               Console.Write("* ");
+            }
+            Console.WriteLine();
+         }
+
+         spaces = 1;
+         for (i = 7; i >= 1; i--, spaces++)
+         {
+            for (j = spaces; j >= 1; j--)
+            {
+               Console.Write(" ");
+            }
+            for (k = i; k >= 1; k--)
+            {
+               Console.Write("* ");
+            }
+            Console.WriteLine();
+         }
       }
       private static void test26()
       {
