@@ -6,11 +6,44 @@ namespace DiamondPattern
    {
       static void Main(string[] args)
       {
-         int userSize;
-         string symbol;
-         userSize = getSize();
-         symbol = getSymbol();
-         diamondV5(userSize, symbol);
+         //int userSize;
+         //string symbol;
+         //userSize = getSize();
+         //symbol = getSymbol();
+         //diamondV5(userSize, symbol);
+      }
+
+      /*
+       ######
+       #    #
+       #    #
+       ######
+          */
+      private static void square()
+      {
+         int i, j, spaces, lines;
+         lines = 5;
+         spaces = lines - 2;
+         for (i = 1; i <= lines; i++) // go thrhou the lines
+         {
+            if (i == 1 || i == lines)
+            {
+               Console.Write("*");
+            }
+            else
+            {
+               for (j = 1; j <= lines; j++)
+               {
+                  if 
+               }
+               
+                  else
+                  {
+                     Console.WriteLine();
+                  }
+
+            }
+         }
       }
 
       private static int getSize()
